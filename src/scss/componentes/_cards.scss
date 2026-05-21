@@ -1,0 +1,484 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as f;
+@use "../componentes/icons" as i;
+@use "../componentes/botao" as b;
+
+@mixin numero-card {
+  font-size: 5.63rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  background: $white-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: $gradient-opacity;
+}
+
+@mixin frase-card {
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin card-depoimentos {
+  min-width: 926px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  border: solid 1px $white-color;
+  border-radius: 40px;
+
+  padding: 50px 40px 60px 40px;
+  background: linear-gradient(
+    to right,
+    rgba($white-color, 0.2) 0%,
+    rgba($white-color, 0.1) 50%,
+    rgba($white-color, 0) 100%
+  );
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  .conteudo {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+
+    .logo {
+      width: 12%;
+    }
+
+    .depoimento {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      width: 100%;
+      p {
+        @include f.quotes;
+        text-align: start;
+      }
+      svg {
+        scale: 0.9;
+        display: flex;
+      }
+    }
+
+    .autor {
+      .cliente-nome {
+        font-size: 1.25rem;
+        line-height: 1.5em;
+        letter-spacing: -0.08em;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .empresa {
+        @include f.paragraph-xsmall;
+        font-weight: 100;
+        color: $white-color;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@mixin card-faq {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 800px;
+  height: fit-content;
+  overflow: hidden;
+  border: 1px solid $white-color-50;
+  border-radius: 20px;
+  padding: 24px;
+  background: radial-gradient(
+    30% 50% at 50% 0%,
+    rgba($white-color, 0.1) 0%,
+    rgba($white-color, 0.1) 30%,
+    rgba($white-color, 0) 100%
+  );
+  background-position-x: -25em;
+  background-repeat: no-repeat;
+  transition: background-position 0.4s ease-in;
+
+  .pergunta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h4 {
+      @include f.h4;
+      text-align: start;
+      font-weight: 500;
+      line-height: 150%;
+      transition:
+        color 0.3s ease-in-out,
+        padding 0.3s ease-in-out;
+    }
+    .arrow-faq {
+      @include i.arrow-faq;
+      transition:
+        transform 0.4s ease,
+        fill 0.3s ease;
+    }
+  }
+
+  .resposta {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+      margin-top 0.5s ease,
+      max-height 0.5s ease,
+      opacity 0.6s ease;
+
+    p {
+      @include f.paragraph-xsmall;
+      font-weight: 100;
+      text-align: start;
+    }
+  }
+
+  &:hover {
+    background-position-x: 0em;
+    transition: background-position 0.4s ease-in;
+    color: $white-color-50;
+    border: 1px solid rgba($white-color, 0.8);
+
+    .arrow-faq {
+      fill: $orange-color;
+    }
+  }
+
+  &:not(.card-ativo):hover {
+    h4 {
+      color: rgba($white-color, 0.7);
+      padding-left: 20px;
+    }
+  }
+
+  &.card-ativo {
+    .arrow-faq {
+      transform: rotate(180deg);
+    }
+    .resposta {
+      margin-top: 1.5em;
+      opacity: 0.8;
+    }
+
+    &:hover {
+      .arrow-faq {
+        fill: $teal-color;
+      }
+    }
+  }
+}
+
+@mixin card-servico {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    position: absolute;
+    border-radius: 20px;
+    transform: rotate(4deg) translate(250%, -80%);
+    transition:
+      transform 0.9s cubic-bezier(0, 0, 0.58, 1),
+      opacity 1.3s ease;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .card {
+    max-height: fit-content;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid $white-color;
+    border-radius: 33px;
+    padding: 40px 40px;
+    gap: 21px;
+
+    h3 {
+      @include f.h2;
+      font-weight: 500;
+    }
+
+    p {
+      @include f.fonte-secundaria-inter;
+      text-align: start;
+      @include f.paragraph-small;
+      font-weight: 300;
+
+      opacity: 0.8;
+    }
+
+    .lista {
+      @include f.label;
+      text-transform: uppercase;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-left: 16px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+
+      transform: translateY(-10px);
+      transition:
+        opacity 1s ease,
+        max-height 0.9s cubic-bezier(0, 0, 0.58, 1),
+        transform 0.7s ease;
+
+      li {
+        list-style-type: disc;
+      }
+    }
+
+    background: radial-gradient(
+      50% 40% at 50% 0%,
+      rgba($white-color, 0.1) 0%,
+      rgba($white-color, 0.09) 30%,
+      rgba($white-color, 0) 100%
+    );
+    background-position-x: -25em;
+    background-repeat: no-repeat;
+    transition: background-position 0.8s cubic-bezier(0, 0, 0.58, 1);
+
+    .botao-info {
+      @include f.label;
+      @include b.botao-servico;
+      transition: gap 0.6s ease;
+
+      .seta-icon {
+        transition: transform 0.6s ease-out;
+        .preenchimento {
+          transition: opacity 0.6s ease;
+        }
+        .contorno {
+          transition:
+            fill 0.2s ease,
+            stroke-width 0.2s ease,
+            stroke 0.2s ease;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .card {
+      cursor: pointer;
+      background-position-x: -4em;
+      transition: background-position 0.8s cubic-bezier(0, 0, 0.58, 1);
+    }
+    .botao-info {
+      gap: 15px;
+      .seta-icon {
+        transform: rotate(0deg);
+        .preenchimento {
+          fill: $orange-color;
+          opacity: 0.2;
+          transition: fill 0.3s ease;
+        }
+        .contorno {
+          fill: $orange-color;
+          stroke: $orange-color;
+          stroke-width: 10;
+          opacity: 1;
+          transition:
+            fill 0.3s ease,
+            stroke 0.3s ease;
+        }
+      }
+    }
+
+    img {
+      transform: rotate(-3deg) translate(135%, -66%);
+      opacity: 1;
+    }
+  }
+
+  &.ativado {
+    img {
+      opacity: 1;
+      transform: translate(-110%, 0%);
+      width: auto;
+      height: 100%;
+    }
+    .card {
+      .lista {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      &.botao-info:hover {
+        .seta-icon {
+          transform: rotate(-90deg);
+          .preenchimento {
+            fill: $teal-color;
+            opacity: 0.2;
+          }
+
+          .contorno {
+            fill: $teal-color;
+            stroke: $teal-color;
+            stroke-width: 10;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin card-categorias {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba($white-color, 0);
+  transition: border-color 0.6s ease;
+
+  .conteudos {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 40px 40px 20px;
+    z-index: 4;
+    transition: 0.6s ease;
+
+    .categoria-card {
+      @include f.h3;
+      font-weight: 500;
+      width: fit-content;
+
+      background: $gradient-button;
+      background-size: 200% 100%;
+      background-position: left;
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: $white-color;
+
+      transition: 0.6s ease;
+    }
+
+    .descricao-card {
+      @include f.paragraph-xsmall;
+      color: $white-color-80;
+      opacity: 0;
+      transition: 0.8s ease;
+    }
+  }
+
+  .wrapper {
+    .img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 1;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      display: block;
+    }
+
+    &::after {
+      opacity: 0;
+      content: "";
+      position: absolute;
+      inset: 0;
+      inset: 5px 0px 0px 5px;
+      left: 2%;
+      right: 2%;
+
+      z-index: 3;
+
+      background: repeating-linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 0px,
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px,
+        transparent 50px
+      );
+
+      background-position: center;
+      background-size: 40px 100%;
+
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        white 50%,
+        transparent 100%
+      );
+
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        white 50%,
+        transparent 100%
+      );
+
+      transition: opacity 0.5s ease;
+    }
+
+    &::before {
+      opacity: 1;
+      position: absolute;
+      content: "";
+      inset: 0;
+      z-index: 2;
+      background: $black-gradient;
+    }
+  }
+
+  &::before {
+    opacity: 0;
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: $radial-black;
+    z-index: 2;
+
+    transition: opacity 0.5s ease;
+  }
+
+  &:hover {
+    border-color: $white-color-30;
+    .conteudos {
+      padding: 40px;
+
+      .categoria-card {
+        -webkit-text-fill-color: transparent;
+        background-position: right;
+      }
+      .descricao-card {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      opacity: 1;
+    }
+
+    .wrapper {
+      &::after {
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+
+      .img {
+        opacity: 0.8;
+      }
+    }
+  }
+}

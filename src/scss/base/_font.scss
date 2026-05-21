@@ -1,0 +1,30 @@
+$font-h1: 4.3rem;
+$font-h2: clamp(1.5rem, calc(1.319rem + 0.741vw), 1.88rem);
+$font-h3: clamp(1.13rem, calc(0.943rem + 0.909vw), 1.63rem);
+$font-h4: 1.13rem;
+$font-h5: 0.88rem;
+$display-text: clamp(1.88rem, calc(0.739rem + 5.682vw), 5rem);
+$footer-link: clamp(0.81rem, calc(0.809rem + 0.005vw), 0.81rem);
+$nav-link: 1rem;
+$paragraph-large: clamp(1.5rem, calc(1.227rem + 1.364vw), 2.25rem);
+$paragraph-medium: clamp(1rem, calc(0.909rem + 0.455vw), 1.25rem);
+$paragraph-small: clamp(0.75rem, calc(0.614rem + 0.682vw), 1.13rem);
+$paragraph-xsmall: 0.94rem;
+$quotes: clamp(1.25rem, calc(0.75rem + 2.5vw), 2.63rem);
+$label: 0.75rem;
+
+$letter-space-big: -0.05em;
+$letter-space-medium: -0.04em;
+$letter-space-small: -0.02em;
+
+$line-xlarge: 2em;
+$line-large: 1.5em;
+$line-medium: 1.4em;
+$line-small: 1.2em;
+$line-xsmall: 1em;
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

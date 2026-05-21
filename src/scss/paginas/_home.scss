@@ -1,0 +1,617 @@
+@use "../base/variables" as *;
+@use "../base/reset" as *;
+@use "../base/mixins" as f;
+@use "../componentes/botao" as b;
+@use "../componentes/cards" as c;
+@use "../componentes/icons" as i;
+@use "../componentes/sliderElements" as s;
+
+body {
+  width: 100vh;
+  height: 100vh;
+  background: $black-color;
+  color: $white-color;
+  overflow-x: hidden;
+
+  main {
+    width: 100%;
+    .hero {
+      position: relative;
+
+      img {
+        position: absolute;
+        z-index: 0;
+        /* position: -webkit-sticky; */
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        overflow: hidden;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        .hero-text {
+          z-index: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+
+          h1 {
+            @include f.h1;
+            width: 80%;
+            text-align: center;
+          }
+          p {
+            width: 35%;
+            @include f.paragraph-medium;
+            text-align: center;
+          }
+        }
+
+        .fundo {
+          @include b.fundo;
+          padding: 4px;
+
+          button {
+            @include b.botao-gravacao;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+              text-transform: uppercase;
+            }
+            svg {
+              @include i.gravando-icon;
+            }
+          }
+        }
+      }
+    }
+
+    .showreel {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        text-transform: uppercase;
+        font-size: 14vw;
+        font-weight: 700;
+      }
+
+      .iframe-container {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        aspect-ratio: 16/9;
+        border-radius: 50px;
+      }
+    }
+
+    .parceiros {
+      width: 100%;
+      padding: 100px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 49px;
+
+      h2 {
+        @include f.h2;
+        font-weight: 500;
+      }
+      .slider {
+        width: 100%;
+        border: solid 1px $white-color;
+        border-radius: 60px;
+        overflow: hidden;
+        border: solid 1px $white-color;
+        @include s.slider-parceiros;
+      }
+    }
+
+    .destaque-portifolio {
+      padding: 100px 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .texto {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 50px;
+        margin-bottom: 50px;
+
+        h2 {
+          @include f.h2;
+          font-weight: 600;
+        }
+
+        .fundo {
+          @include b.fundo;
+          .botao {
+            @include b.botao-gravacao;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+
+            svg {
+              @include i.gravando-icon;
+            }
+          }
+        }
+      }
+
+      .carrosel-portifolio {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+        overflow: scroll;
+        overflow-x: hidden;
+        .card {
+          width: 300px;
+          height: 100%;
+          background-color: $white-color;
+          border-radius: 16px;
+        }
+      }
+    }
+
+    .servicos {
+      padding: 100px 50px;
+      .container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        gap: 40px;
+
+        .background {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: -1;
+        }
+        .info-apoio {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: start;
+          width: 50%;
+
+          h2 {
+            @include f.h2;
+            font-weight: 700;
+          }
+
+          .fundo {
+            @include b.fundo;
+            .botao {
+              @include b.botao-gravacao;
+              display: flex;
+              align-items: center;
+
+              .gravando-icon {
+                @include i.gravando-icon;
+              }
+            }
+          }
+        }
+      }
+
+      .cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        gap: 31px;
+        .card-wrapper {
+          @include c.card-servico;
+        }
+      }
+    }
+
+    .categorias {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 50px;
+      gap: 73px;
+      h2 {
+        @include f.h2;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .grid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 2fr);
+        grid-template-rows: repeat(3, 346px);
+        grid-template-areas:
+          "a a b c"
+          "d e e c"
+          "f f g g";
+
+        .card-a {
+          @include c.card-categorias;
+          grid-area: a;
+        }
+        .card-b {
+          @include c.card-categorias;
+          grid-area: b;
+        }
+        .card-c {
+          @include c.card-categorias;
+          grid-area: c;
+        }
+        .card-d {
+          @include c.card-categorias;
+          grid-area: d;
+        }
+        .card-e {
+          @include c.card-categorias;
+          grid-area: e;
+        }
+        .card-f {
+          @include c.card-categorias;
+          grid-area: f;
+        }
+        .card-g {
+          @include c.card-categorias;
+          grid-area: g;
+        }
+
+        gap: 12px;
+      }
+
+      .fundo {
+        @include b.fundo;
+        .botao {
+          @include b.botao-gravacao;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .gravando-icon {
+            @include i.gravando-icon;
+          }
+        }
+      }
+    }
+
+    .sobre-produtora {
+      width: 100%;
+      width: 100%;
+      padding: 100px 50px;
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+
+        background-image: url("/dist/Imagens/lines_background.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .info-apoio {
+          display: flex;
+          width: 50%;
+          position: relative;
+
+          .conteudo {
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px;
+
+            h2 {
+              position: -webkit-sticky;
+              position: sticky;
+              top: 100px;
+
+              @include f.h2;
+              font-weight: 600;
+            }
+
+            .fundo {
+              @include b.fundo;
+              .botao {
+                @include b.botao-gravacao;
+                display: flex;
+                align-items: center;
+                .gravando-icon {
+                  @include i.gravando-icon;
+                }
+              }
+            }
+          }
+        }
+
+        .content {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 79px;
+
+          .text {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5em;
+
+            .destaque {
+              @include f.fonte-secundaria-inter;
+              @include f.paragraph-large;
+              font-weight: 300;
+            }
+            .secundario {
+              @include f.fonte-secundaria-inter;
+              @include f.paragraph-medium;
+              opacity: 0.8;
+            }
+          }
+
+          .numeros {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-left: 5em;
+
+            img {
+              display: flex;
+              position: absolute;
+              width: 6.81em;
+              height: 6.81em;
+              opacity: 0.1;
+            }
+
+            .linha1 {
+              display: flex;
+              flex-direction: row;
+              position: relative;
+              gap: 9.37em;
+
+              .experiencia {
+                min-width: 14.1em;
+                min-height: 6.7em;
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+
+                .numero {
+                  @include c.numero-card;
+                  z-index: -1;
+                  position: absolute;
+                }
+                .frase {
+                  @include c.frase-card;
+                  z-index: 0;
+                }
+              }
+
+              .clientes-atendidos {
+                min-width: 14.1em;
+                min-height: 6.7em;
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+
+                .numero {
+                  @include c.numero-card;
+                  z-index: -1;
+                  position: absolute;
+                }
+                .frase {
+                  @include c.frase-card;
+                  z-index: 0;
+                }
+              }
+            }
+
+            .linha2 {
+              display: flex;
+              flex-direction: row;
+              position: relative;
+              gap: 9.37em;
+
+              .projetos {
+                min-width: 14.1em;
+                min-height: 6.7em;
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+
+                .numero {
+                  @include c.numero-card;
+                  z-index: -1;
+                  position: absolute;
+                }
+
+                .frase {
+                  @include c.frase-card;
+                  z-index: 0;
+                }
+              }
+
+              .clientes-satisfeitos {
+                min-width: 14.1em;
+                min-height: 6.7em;
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+
+                .numero {
+                  @include c.numero-card;
+                  z-index: -1;
+                  position: absolute;
+                }
+                .frase {
+                  @include c.frase-card;
+                  z-index: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .depoimentos {
+      width: 100%;
+      height: 100%;
+      background-image: url("/dist/Imagens/background_depoimentos.webp");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 100px 50px;
+
+      .conteudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        h2 {
+          @include f.h2;
+          mix-blend-mode: difference;
+          width: 35%;
+          text-align: center;
+        }
+
+        .slide-cards-depoimentos {
+          margin-bottom: 50px;
+
+          .card {
+            @include c.card-depoimentos;
+          }
+        }
+      }
+    }
+
+    .faq {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 100px 50px;
+
+      .conteudo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+
+        background-image: url("/dist/Imagens/lines_background.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        h2 {
+          width: 50%;
+          @include f.h2;
+          text-align: center;
+        }
+
+        .cards-faq {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: center;
+          gap: 10px;
+
+          .card {
+            // display: flex;
+            // flex-direction: column;
+            @include c.card-faq;
+          }
+        }
+      }
+    }
+
+    .cursos {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-image: url("/dist/Imagens/lines_background.webp");
+      padding: 100px 50px;
+
+      .titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        h2 {
+          @include f.h2;
+        }
+        .fundo {
+          @include b.fundo;
+          button {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .gravando-icon {
+              @include i.gravando-icon;
+            }
+            @include b.botao-gravacao;
+          }
+        }
+      }
+    }
+
+    .slider-tags {
+      width: max-content;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+
+      @include s.slider-tags;
+    }
+  }
+}

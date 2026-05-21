@@ -1,0 +1,28 @@
+{
+  "name": "qg_do_filmaker",
+  "version": "1.0.0",
+  "description": "portifolio de audiovisual",
+  "keywords": [
+    "qgfilmaker"
+  ],
+  "homepage": "https://github.com/MariaLuizaMb/QG_do_Filmaker#readme",
+  "bugs": {
+    "url": "https://github.com/MariaLuizaMb/QG_do_Filmaker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaLuizaMb/QG_do_Filmaker.git"
+  },
+  "license": "ISC",
+  "author": "maria luiza",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compilar": "sass ./src/scss/main.scss ./dist/css/style.css",
+    "observar": "sass --watch ./src/scss/main.scss ./dist/css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

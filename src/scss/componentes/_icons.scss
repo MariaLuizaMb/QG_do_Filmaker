@@ -1,0 +1,67 @@
+@use "../base/variables" as *;
+
+@mixin gravando-icon {
+  width: 28px;
+  height: 28px;
+  animation: pulse 0.6s cubic-bezier(0.44, 0, 0.56, 1) infinite;
+  path {
+    fill: $red-color;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin arrow-faq {
+  width: 25px;
+  height: 27px;
+}
+
+@mixin seta-icon {
+  width: 28px;
+  height: 28px;
+  transform: rotate(-90deg);
+  stroke-width: 10px;
+  .preenchimento {
+    opacity: 0;
+  }
+  .contorno {
+    fill: $white-color;
+    stroke: $white-color;
+    opacity: 0.8;
+    stroke-width: 2;
+  }
+}
+
+@mixin seta-footer {
+  width: 30px;
+  height: 32px;
+  fill: $white-color;
+}
+
+@mixin seta-redeSocial {
+  width: 20px;
+  height: 22px;
+  fill: $white-color;
+}
+
+@mixin whatsapp-logo {
+  width: 23px;
+  height: 23px;
+  fill: $white-color;
+}
+
+@mixin rede-sociais-icone {
+  width: 25px;
+  height: 28px;
+  fill: $white-color;
+}

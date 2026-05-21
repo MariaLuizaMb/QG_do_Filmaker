@@ -1,0 +1,34 @@
+@use "../base/variables" as *;
+@use "../base/reset" as *;
+@use "../base/mixins.scss" as f;
+@use "../componentes/botao" as b;
+@use "../componentes/cards" as c;
+@use "../componentes/icons" as i;
+
+body {
+  width: 100%;
+  height: 100vh;
+  .alinhar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // @include b.contorno;
+    .fundo {
+      @include b.fundo;
+      .botao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        svg {
+          @include i.gravando-icon;
+        }
+        @include b.botao-gravacao;
+      }
+    }
+  }
+  .qglogo {
+  }
+}

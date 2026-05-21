@@ -1,0 +1,130 @@
+@use "../base/variables" as *;
+@use "../base/mixins.scss" as f;
+@use "icons" as i;
+
+@mixin slider-tags {
+  animation: scroll-horizontal 25s linear infinite;
+  .componente {
+    overflow: visible;
+    width: 100%;
+    height: 18.75em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+
+    .gravando-icon {
+      @include i.gravando-icon;
+    }
+
+    .conteudo {
+      overflow: visible;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      width: fit-content;
+
+      img {
+        position: absolute;
+        opacity: 0;
+        border-radius: 0.9em;
+        z-index: -1;
+
+        transform: rotate(-11deg);
+        transform-origin: center;
+
+        transition:
+          transform 1.5s cubic-bezier(0, 0, 0.58, 1),
+          opacity 1.5s ease;
+      }
+
+      .palavra {
+        position: relative;
+        opacity: 0.6;
+
+        background: $radial-white;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        font-size: 3.75rem;
+        letter-spacing: -0.04em;
+        line-height: 1em;
+        font-weight: 600;
+        width: 100%;
+      }
+
+      &:hover img {
+        transform: rotate(4deg) scale(var(--scale-final));
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+@mixin slider-parceiros {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: min-content;
+
+  .wrapper {
+    width: 100%;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      $black-color 20%,
+      $black-color 80%,
+      transparent 100%
+    );
+
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      $black-color 20%,
+      $black-color 80%,
+      transparent 100%
+    );
+
+    .container {
+      width: max-content;
+
+      .logos {
+        display: flex;
+        flex-direction: row;
+        width: max-content;
+
+        animation: slide-parceiros 20s linear infinite;
+        .logo {
+          width: 200px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-left: solid 1px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide-parceiros {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

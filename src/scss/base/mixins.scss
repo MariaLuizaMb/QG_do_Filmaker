@@ -1,0 +1,91 @@
+@use "font" as f;
+@use "variables" as *;
+@mixin fonte-principal-syne {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+}
+@mixin fonte-secundaria-inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+@mixin h1 {
+  font-size: f.$font-h1;
+  letter-spacing: f.$letter-space-big;
+  line-height: f.$line-xsmall;
+}
+
+@mixin h2 {
+  font-size: f.$font-h2;
+  letter-spacing: f.$letter-space-big;
+  line-height: f.$line-small;
+}
+
+@mixin h3 {
+  font-size: f.$font-h3;
+  letter-spacing: f.$letter-space-big;
+  line-height: f.$line-large;
+}
+@mixin h4 {
+  font-size: f.$font-h4;
+  letter-spacing: f.$letter-space-big;
+  font-weight: 500;
+}
+@mixin h5 {
+  font-size: f.$font-h5;
+  line-height: f.$line-large;
+}
+@mixin display-text {
+  font-size: f.$display-text;
+  letter-spacing: f.$letter-space-big;
+  line-height: f.$line-xsmall;
+}
+
+@mixin footer-link {
+  font-size: f.$footer-link;
+  line-height: f.$line-xlarge;
+  font-weight: 600;
+  color: $white-color;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $orange-color;
+  }
+}
+
+@mixin nav-link {
+  font-size: f.$nav-link;
+}
+
+@mixin paragraph-large {
+  font-size: f.$paragraph-large;
+  letter-spacing: f.$letter-space-medium;
+  line-height: f.$line-small;
+}
+
+@mixin paragraph-medium {
+  font-size: f.$paragraph-medium;
+  letter-spacing: f.$letter-space-small;
+  line-height: f.$line-large;
+}
+
+@mixin paragraph-small {
+  font-size: f.$paragraph-small;
+  letter-spacing: f.$letter-space-small;
+  line-height: f.$line-large;
+}
+
+@mixin paragraph-xsmall {
+  font-size: f.$paragraph-xsmall;
+  line-height: f.$line-large;
+}
+
+@mixin quotes {
+  font-size: f.$quotes;
+  letter-spacing: f.$letter-space-big;
+}
+
+@mixin label {
+  font-size: f.$label;
+  line-height: f.$line-xlarge;
+}
