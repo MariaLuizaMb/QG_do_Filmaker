@@ -23,6 +23,9 @@ footer {
       background: v.$white-radial-gradient;
 
       .QGlogo {
+        width: 405px;
+        max-width: 100%;
+        height: auto;
         margin-bottom: 10px;
       }
 
@@ -58,6 +61,7 @@ footer {
 
         .botao {
           max-width: 651px;
+          text-decoration: none;
           @include b.botao-footer;
         }
       }
@@ -110,6 +114,7 @@ footer {
           }
 
           .contato-whatsapp {
+            text-decoration: none;
             @include b.botao-whatsapp;
           }
         }
@@ -186,6 +191,7 @@ footer {
         grid-template-columns: repeat(2, 50%);
         gap: 10px;
         .redirect {
+          text-decoration: none;
           @include b.botao-social;
         }
       }
