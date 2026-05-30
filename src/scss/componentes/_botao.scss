@@ -90,13 +90,13 @@
   &:hover {
     .wrapper {
       .seta {
-        transform: translateX(12.2em) rotate(-25deg);
+        transform: translateX(9.9em) rotate(-25deg);
       }
       &::after {
         opacity: 0.2;
         transform: scale(1);
-        transform: translateX(12em);
-        scale: 1;
+        transform: translateX(11em);
+        scale: 0.85;
       }
     }
     span {
