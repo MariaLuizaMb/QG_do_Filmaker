@@ -1,0 +1,14 @@
+@use "../base/font" as f;
+@use "../base/mixins" as m;
+@use "../base/variables" as *;
+
+@mixin tag-card {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  background: rgba($black-color, 0.5);
+  border: 0.01rem solid rgba($white-color, 0.3);
+  border-radius: 2rem;
+  font-size: f.$label;
+  text-transform: uppercase;
+}

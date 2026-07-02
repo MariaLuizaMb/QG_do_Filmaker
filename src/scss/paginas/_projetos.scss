@@ -1,5 +1,6 @@
 @use "../base/variables" as *;
-@use "../base/mixins.scss" as f;
+@use "../base/mixins.scss" as m;
+@use "../base/font.scss" as f;
 @use "../componentes/botao" as b;
 @use "../componentes/cards" as c;
 @use "../componentes/icons" as i;
@@ -15,15 +16,30 @@ body {
     width: 100%;
 
     .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
       width: 100%;
       min-height: 100vh;
       overflow: hidden;
 
+      padding: 0 3rem;
+
       .text-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
         position: relative;
         z-index: 1;
-        
+        width: 45%;
+        gap: 4rem;
+        .texto {
+        }
+        .text-vertical {
+          writing-mode: vertical-rl;
+          text-transform: uppercase;
+        }
       }
 
       img {
@@ -33,6 +49,38 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+    }
+
+    .filtro-categorias {
+      display: flex;
+      .seletor-categorias {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 4rem 8rem;
+        .categoria {
+          padding: 0.6rem 1.2rem;
+          background: rgba($white-color, 0.05);
+          border: 1px solid rgba($white-color, 0.22);
+          border-radius: 2rem;
+          color: $white-color;
+          font-size: 1rem;
+        }
+      }
+    }
+    .projetos-portifolio {
+      display: flex;
+      position: relative;
+      width: 100%;
+
+      padding: 4rem;
+
+      .card-projeto {
+        @include c.card-projeto;
       }
     }
   }

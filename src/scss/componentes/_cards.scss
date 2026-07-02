@@ -1,7 +1,9 @@
 @use "../base/variables" as *;
-@use "../base/mixins" as f;
+@use "../base/font" as f;
+@use "../base/mixins" as m;
 @use "../componentes/icons" as i;
 @use "../componentes/botao" as b;
+@use "../componentes/tagCard" as t;
 
 @mixin numero-card {
   font-size: 5.63rem;
@@ -478,6 +480,76 @@
 
       .img {
         opacity: 0.8;
+      }
+    }
+  }
+}
+
+@mixin card-projeto {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0.6rem 0.6rem 1.75rem 0.6rem;
+  gap: 1rem;
+  background: rgba($white-color, 0.05);
+  border: 0.02rem solid rgba($white-color, 0.22);
+  border-radius: 1rem;
+
+  .tag-card {
+    position: absolute;
+    z-index: 2;
+    margin: 0.8rem;
+    @include t.tag-card;
+  }
+
+  .video-projeto {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16/9;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .container {
+    padding: 0 1.25rem;
+    .texto-conteudo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      .nome-cliente {
+        margin-top: 0.5rem;
+        font-size: f.$label;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+      .topo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .nome-projeto {
+          font-size: f.$paragraph-small;
+          font-weight: 720;
+        }
+
+        .data-projeto {
+          font-size: f.$paragraph-xsmall;
+          font-weight: 400;
+        }
+      }
+
+      .descricao-projeto {
+        margin-top: 0.5rem;
+        @include m.paragraph-xsmall;
+        font-weight: 200;
+        color: $white-color-80;
+      }
+    }
+    .tags {
+      margin-top: 0.5rem;
+      .tag-servico {
+        @include t.tag-card;
       }
     }
   }

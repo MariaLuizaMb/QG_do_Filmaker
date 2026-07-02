@@ -26,14 +26,27 @@ body main {
   width: 100%;
 }
 body main .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  padding: 0 3rem;
 }
 body main .hero .text-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   position: relative;
   z-index: 1;
+  width: 45%;
+  gap: 4rem;
+}
+body main .hero .text-hero .text-vertical {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
 }
 body main .hero img {
   position: absolute;
@@ -42,6 +55,110 @@ body main .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+body main .filtro-categorias {
+  display: flex;
+}
+body main .filtro-categorias .seletor-categorias {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 4rem 8rem;
+}
+body main .filtro-categorias .seletor-categorias .categoria {
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 2rem;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+}
+body main .projetos-portifolio {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 4rem;
+}
+body main .projetos-portifolio .card-projeto {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0.6rem 0.6rem 1.75rem 0.6rem;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.02rem solid rgba(255, 255, 255, 0.22);
+  border-radius: 1rem;
+}
+body main .projetos-portifolio .card-projeto .tag-card {
+  position: absolute;
+  z-index: 2;
+  margin: 0.8rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  background: rgba(13, 13, 13, 0.5);
+  border: 0.01rem solid rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+body main .projetos-portifolio .card-projeto .video-projeto {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+body main .projetos-portifolio .card-projeto .container {
+  padding: 0 1.25rem;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .nome-cliente {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .topo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .topo .nome-projeto {
+  font-size: clamp(0.75rem, 0.614rem + 0.682vw, 1.13rem);
+  font-weight: 720;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .topo .data-projeto {
+  font-size: 0.94rem;
+  font-weight: 400;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .descricao-projeto {
+  margin-top: 0.5rem;
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.8);
+}
+body main .projetos-portifolio .card-projeto .container .tags {
+  margin-top: 0.5rem;
+}
+body main .projetos-portifolio .card-projeto .container .tags .tag-servico {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  background: rgba(13, 13, 13, 0.5);
+  border: 0.01rem solid rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=projetos.css.map */
