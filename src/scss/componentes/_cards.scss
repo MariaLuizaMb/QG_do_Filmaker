@@ -58,7 +58,7 @@
       gap: 11px;
       width: 100%;
       p {
-        @include f.quotes;
+        @include m.quotes;
         text-align: start;
       }
       svg {
@@ -76,7 +76,7 @@
         text-transform: uppercase;
       }
       .empresa {
-        @include f.paragraph-xsmall;
+        @include m.paragraph-xsmall;
         font-weight: 100;
         color: $white-color;
         opacity: 0.5;
@@ -111,7 +111,7 @@
     justify-content: space-between;
 
     h4 {
-      @include f.h4;
+      @include m.h4;
       text-align: start;
       font-weight: 500;
       line-height: 150%;
@@ -137,7 +137,7 @@
       opacity 0.6s ease;
 
     p {
-      @include f.paragraph-xsmall;
+      @include m.paragraph-xsmall;
       font-weight: 100;
       text-align: start;
     }
@@ -206,21 +206,21 @@
     gap: 21px;
 
     h3 {
-      @include f.h2;
+      @include m.h2;
       font-weight: 500;
     }
 
     p {
-      @include f.fonte-secundaria-inter;
+      @include m.fonte-secundaria-inter;
       text-align: start;
-      @include f.paragraph-small;
+      @include m.paragraph-small;
       font-weight: 300;
 
       opacity: 0.8;
     }
 
     .lista {
-      @include f.label;
+      @include m.label;
       text-transform: uppercase;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -251,7 +251,7 @@
     transition: background-position 0.8s cubic-bezier(0, 0, 0.58, 1);
 
     .botao-info {
-      @include f.label;
+      @include m.label;
       @include b.botao-servico;
       transition: gap 0.6s ease;
 
@@ -354,7 +354,7 @@
     transition: 0.6s ease;
 
     .categoria-card {
-      @include f.h3;
+      @include m.h3;
       font-weight: 500;
       width: fit-content;
 
@@ -370,7 +370,7 @@
     }
 
     .descricao-card {
-      @include f.paragraph-xsmall;
+      @include m.paragraph-xsmall;
       color: $white-color-80;
       opacity: 0;
       transition: 0.8s ease;
@@ -486,8 +486,8 @@
 }
 
 @mixin card-projeto {
-  width: 30%;
-  display: flex;
+  width: 100%;
+  display: block;
   flex-direction: column;
   position: relative;
   padding: 0.6rem 0.6rem 1.75rem 0.6rem;
@@ -538,19 +538,40 @@
           font-weight: 400;
         }
       }
+    }
+    .descricao {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.5rem;
+      gap: 1rem;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition:
+        max-height 0.5s ease,
+        opacity 0.6s ease;
 
       .descricao-projeto {
-        margin-top: 0.5rem;
         @include m.paragraph-xsmall;
         font-weight: 200;
         color: $white-color-80;
       }
-    }
-    .tags {
-      margin-top: 0.5rem;
-      .tag-servico {
-        @include t.tag-card;
+      .tags {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        flex-direction: row;
+        .tag-servico {
+          @include t.tag-servico;
+        }
       }
+    }
+  }
+
+  &.card-ativo {
+    .descricao {
+      opacity: 1;
     }
   }
 }

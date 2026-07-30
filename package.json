@@ -24,5 +24,8 @@
   },
   "devDependencies": {
     "sass": "^1.97.3"
+  },
+  "dependencies": {
+    "muuri": "^0.9.5"
   }
 }

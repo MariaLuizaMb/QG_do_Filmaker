@@ -73,14 +73,38 @@ body {
       }
     }
     .projetos-portifolio {
-      display: flex;
       position: relative;
       width: 100%;
+      display: flex;
 
+      gap: 1rem;
       padding: 4rem;
 
+      .coluna1 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .coluna2 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .coluna3 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
       .card-projeto {
         @include c.card-projeto;
+      }
+    }
+
+    .container-botao {
+      display: flex;
+      justify-content: center;
+      .botao {
+        @include b.botao-gravacao;
       }
     }
   }
