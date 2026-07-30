@@ -99,12 +99,29 @@ body {
         @include c.card-projeto;
       }
     }
-
     .container-botao {
+      width: 100%;
       display: flex;
       justify-content: center;
-      .botao {
-        @include b.botao-gravacao;
+
+      .fundo {
+        @include b.fundo;
+        padding: 4px;
+        width: fit-content;
+
+        button {
+          @include b.botao-gravacao;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            text-transform: uppercase;
+          }
+          svg {
+            @include i.gravando-icon;
+          }
+        }
       }
     }
   }

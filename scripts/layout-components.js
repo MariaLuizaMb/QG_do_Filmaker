@@ -6,16 +6,14 @@ const paths = {
   logo: `${rootPath}dist/Imagens/QgLogo1.svg`,
   home: `${pagesPath}home.html`,
   projetos: `${pagesPath}projetos.html`,
+  sobre: `${pagesPath}sobre.html`,
 };
 
 const navLinks = [
   { label: "Home", href: paths.home },
   { label: "Projetos", href: paths.projetos },
-  { label: "Álbuns", href: "#" },
-  { label: "Sobre", href: "#" },
+  { label: "Sobre", href: paths.sobre },
   { label: "Serviços", href: "#" },
-  { label: "Cursos", href: "#" },
-  { label: "Contato", href: "#" },
 ];
 
 const arrowIcon = `

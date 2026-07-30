@@ -198,10 +198,30 @@ body main .projetos-portifolio .card-projeto.card-ativo .descricao {
   opacity: 1;
 }
 body main .container-botao {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
-body main .container-botao .botao {
+body main .container-botao .fundo {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 5px;
+  border-radius: 40px;
+}
+body main .container-botao .fundo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  pointer-events: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+body main .container-botao .fundo {
+  padding: 4px;
+  width: fit-content;
+}
+body main .container-botao .fundo button {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -216,17 +236,17 @@ body main .container-botao .botao {
   overflow: hidden;
   transition: padding 0.3s cubic-bezier(0.44, 0, 0.56, 1);
 }
-body main .container-botao .botao svg {
+body main .container-botao .fundo button svg {
   z-index: 1;
   transition: opacity 0.3s ease;
   opacity: 0;
 }
-body main .container-botao .botao span {
+body main .container-botao .fundo button span {
   width: fit-content;
   z-index: 1;
   white-space: nowrap;
 }
-body main .container-botao .botao::after {
+body main .container-botao .fundo button::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -237,7 +257,7 @@ body main .container-botao .botao::after {
   transform: scale(1);
   transition: transform 0.4s ease-in-out;
 }
-body main .container-botao .botao::before {
+body main .container-botao .fundo button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -246,19 +266,35 @@ body main .container-botao .botao::before {
   box-shadow: inset 0 1px 0 rgba(13, 13, 13, 0.6), inset 1px 0 0 rgba(13, 13, 13, 0.6);
   transition: box-shadow 0.3s ease;
 }
-body main .container-botao .botao:hover {
+body main .container-botao .fundo button:hover {
   padding-left: 27px;
   background: rgba(13, 13, 13, 0.6);
 }
-body main .container-botao .botao:hover::before {
+body main .container-botao .fundo button:hover::before {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 1px 0 0 rgba(255, 255, 255, 0.5);
 }
-body main .container-botao .botao:hover svg {
+body main .container-botao .fundo button:hover svg {
   opacity: 1;
   transition: opacity 0.2s ease;
 }
-body main .container-botao .botao:hover::after {
+body main .container-botao .fundo button:hover::after {
   transform: scale(0);
+}
+body main .container-botao .fundo button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main .container-botao .fundo button span {
+  text-transform: uppercase;
+}
+body main .container-botao .fundo button svg {
+  width: 28px;
+  height: 28px;
+  animation: pulse 0.6s cubic-bezier(0.44, 0, 0.56, 1) infinite;
+}
+body main .container-botao .fundo button svg path {
+  fill: rgb(255, 0, 13);
 }
 
 /*# sourceMappingURL=projetos.css.map */
