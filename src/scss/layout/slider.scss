@@ -1,0 +1,11 @@
+@use "../componentes/sliderElements" as s;
+
+.slider-tags {
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+
+  @include s.slider-tags;
+}

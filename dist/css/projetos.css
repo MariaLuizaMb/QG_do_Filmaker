@@ -44,6 +44,12 @@ body main .hero .text-hero {
   width: 45%;
   gap: 4rem;
 }
+body main .hero .text-hero .texto {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
 body main .hero .text-hero .text-vertical {
   writing-mode: vertical-rl;
   text-transform: uppercase;

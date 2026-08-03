@@ -375,8 +375,10 @@ body main .destaque-portifolio .carrosel-portifolio .card {
 }
 body main .servicos {
   padding: 100px 50px;
+  height: fit-content;
 }
 body main .servicos .container {
+  height: 100%;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -396,6 +398,10 @@ body main .servicos .container .info-apoio {
   width: 50%;
 }
 body main .servicos .container .info-apoio h2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+  margin-bottom: 80px;
   font-size: clamp(1.5rem, 1.319rem + 0.741vw, 1.88rem);
   letter-spacing: -0.05em;
   line-height: 1.2em;
@@ -1577,6 +1583,7 @@ body main .sobre-produtora .container .info-apoio .conteudo h2 {
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
+  margin-bottom: 80px;
   font-size: clamp(1.5rem, 1.319rem + 0.741vw, 1.88rem);
   letter-spacing: -0.05em;
   line-height: 1.2em;
@@ -2127,67 +2134,6 @@ body main .cursos .titulo .fundo button:hover svg {
 }
 body main .cursos .titulo .fundo button:hover::after {
   transform: scale(0);
-}
-body main .slider-tags {
-  width: max-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  animation: scroll-horizontal 25s linear infinite;
-}
-body main .slider-tags .componente {
-  overflow: visible;
-  width: 100%;
-  height: 18.75em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  position: relative;
-}
-body main .slider-tags .componente .gravando-icon {
-  width: 28px;
-  height: 28px;
-  animation: pulse 0.6s cubic-bezier(0.44, 0, 0.56, 1) infinite;
-}
-body main .slider-tags .componente .gravando-icon path {
-  fill: rgb(255, 0, 13);
-}
-body main .slider-tags .componente .conteudo {
-  overflow: visible;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  width: fit-content;
-}
-body main .slider-tags .componente .conteudo img {
-  position: absolute;
-  opacity: 0;
-  border-radius: 0.9em;
-  z-index: -1;
-  transform: rotate(-11deg);
-  transform-origin: center;
-  transition: transform 1.5s cubic-bezier(0, 0, 0.58, 1), opacity 1.5s ease;
-}
-body main .slider-tags .componente .conteudo .palavra {
-  position: relative;
-  opacity: 0.6;
-  background: radial-gradient(circle, white 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0.1) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 3.75rem;
-  letter-spacing: -0.04em;
-  line-height: 1em;
-  font-weight: 600;
-  width: 100%;
-}
-body main .slider-tags .componente .conteudo:hover img {
-  transform: rotate(4deg) scale(var(--scale-final));
-  opacity: 0.9;
 }
 
 /*# sourceMappingURL=home.css.map */

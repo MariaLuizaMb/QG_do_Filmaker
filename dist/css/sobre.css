@@ -1,0 +1,699 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(13, 13, 13);
+  color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+body main {
+  width: 100%;
+}
+body main .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0 3rem;
+}
+body main .hero .text-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+  width: 45%;
+  gap: 4rem;
+}
+body main .hero .text-hero .texto {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+body main .hero .text-hero .text-vertical {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+}
+body main .hero img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body main .sobre-produtora {
+  width: 100%;
+  width: 100%;
+  padding: 100px 50px;
+}
+body main .sobre-produtora .container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  background-image: url("/dist/Imagens/lines_background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body main .sobre-produtora .container .info-apoio {
+  display: flex;
+  width: 35%;
+  position: relative;
+}
+body main .sobre-produtora .container .conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 79px;
+  width: 100%;
+}
+body main .sobre-produtora .container .conteudo .textos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+body main .sobre-produtora .container .conteudo .textos .destaque {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: clamp(1.5rem, 1.227rem + 1.364vw, 2.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1.2em;
+  font-weight: 300;
+}
+body main .sobre-produtora .container .conteudo .textos .secundario {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: clamp(1rem, 0.909rem + 0.455vw, 1.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.5em;
+  opacity: 0.8;
+}
+body main .sobre-produtora .container .conteudo .numeros {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-left: 5em;
+}
+body main .sobre-produtora .container .conteudo .numeros img {
+  display: flex;
+  position: absolute;
+  width: 6.81em;
+  height: 6.81em;
+  opacity: 0.1;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha1 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: 9.37em;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha1 .experiencia {
+  min-width: 14.1em;
+  min-height: 6.7em;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha1 .experiencia .numero {
+  font-size: 5.63rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  background: linear-gradient(to top right, white 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.31;
+  z-index: -1;
+  position: absolute;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha1 .experiencia .frase {
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 0;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha1 .clientes-atendidos {
+  min-width: 14.1em;
+  min-height: 6.7em;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha1 .clientes-atendidos .numero {
+  font-size: 5.63rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  background: linear-gradient(to top right, white 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.31;
+  z-index: -1;
+  position: absolute;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha1 .clientes-atendidos .frase {
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 0;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha2 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: 9.37em;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha2 .projetos {
+  min-width: 14.1em;
+  min-height: 6.7em;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha2 .projetos .numero {
+  font-size: 5.63rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  background: linear-gradient(to top right, white 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.31;
+  z-index: -1;
+  position: absolute;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha2 .projetos .frase {
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 0;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha2 .clientes-satisfeitos {
+  min-width: 14.1em;
+  min-height: 6.7em;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha2 .clientes-satisfeitos .numero {
+  font-size: 5.63rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  background: linear-gradient(to top right, white 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.31;
+  z-index: -1;
+  position: absolute;
+}
+body main .sobre-produtora .container .conteudo .numeros .linha2 .clientes-satisfeitos .frase {
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 0;
+}
+body main .filosofia {
+  width: 100%;
+  padding: 100px 50px;
+}
+body main .filosofia .container {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2.5rem;
+  width: 100%;
+  padding: 4rem;
+}
+body main .filosofia .container .texto {
+  text-align: justify;
+  text-align-last: center;
+  font-size: clamp(1.25rem, 0.75rem + 2.5vw, 2.63rem);
+  letter-spacing: -0.05em;
+}
+body main .filosofia .container .texto span {
+  color: rgb(255, 122, 59);
+}
+body main .valores {
+  width: 100%;
+  padding: 100px 50px;
+}
+body main .valores .container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 5rem;
+  background-image: url("/dist/Imagens/lines_background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body main .valores .container .conteudo-titulo {
+  width: 50%;
+  font-size: clamp(1.5rem, 1.319rem + 0.741vw, 1.88rem);
+  letter-spacing: -0.05em;
+  line-height: 1.2em;
+  text-align: center;
+}
+body main .valores .topicos {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.3rem 0 1.3rem;
+  width: 100%;
+  gap: 3.25rem;
+}
+body main .valores .topicos .numero {
+  font-size: 11rem;
+  font-weight: 730;
+  background: linear-gradient(to top right, white 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.5;
+}
+body main .valores .topicos .titulo {
+  font-size: clamp(1.25rem, 0.75rem + 2.5vw, 2.63rem);
+  letter-spacing: -0.05em;
+  margin-bottom: 0.8rem;
+}
+body main .valores .topicos .conteudo-texto {
+  width: fill;
+  font-size: clamp(1rem, 0.909rem + 0.455vw, 1.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.5em;
+  text-wrap: wrap;
+}
+body main .valores .topicos .item1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 0 2rem;
+  height: fit-content;
+}
+body main .valores .topicos .item1 .wrapper {
+  padding: 50px 50px 30px 110px;
+  max-width: 68%;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+body main .valores .topicos .item1 .wrapper .numero {
+  position: absolute;
+  top: -50px;
+  left: -5px;
+}
+body main .valores .topicos .item1 .wrapper .conteudo {
+  width: 100%;
+}
+body main .valores .topicos .item2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 0 2rem;
+  height: fit-content;
+  align-items: flex-end;
+}
+body main .valores .topicos .item2 .wrapper {
+  padding: 50px 50px 30px 110px;
+  max-width: 68%;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+body main .valores .topicos .item2 .wrapper .numero {
+  position: absolute;
+  top: -50px;
+  left: -5px;
+}
+body main .valores .topicos .item2 .wrapper .conteudo {
+  width: 100%;
+}
+body main .valores .topicos .item3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 0 2rem;
+  height: fit-content;
+}
+body main .valores .topicos .item3 .wrapper {
+  padding: 50px 50px 30px 110px;
+  max-width: 68%;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+body main .valores .topicos .item3 .wrapper .numero {
+  position: absolute;
+  top: -50px;
+  left: -5px;
+}
+body main .valores .topicos .item3 .wrapper .conteudo {
+  width: 100%;
+}
+body main .valores .topicos .item4 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 0 2rem;
+  height: fit-content;
+  align-items: flex-end;
+}
+body main .valores .topicos .item4 .wrapper {
+  padding: 50px 50px 30px 110px;
+  max-width: 68%;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+body main .valores .topicos .item4 .wrapper .numero {
+  position: absolute;
+  top: -50px;
+  left: -5px;
+}
+body main .valores .topicos .item4 .wrapper .conteudo {
+  width: 100%;
+}
+body main .como-trabalhamos {
+  height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  padding: 100px 50px;
+}
+body main .como-trabalhamos .container {
+  display: flex;
+  align-items: stretch;
+  gap: 5rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2.5rem;
+  padding: 3.13rem;
+}
+body main .como-trabalhamos .container .texto {
+  flex: 1;
+}
+body main .como-trabalhamos .container .texto .titulo {
+  font-size: clamp(1.5rem, 1.319rem + 0.741vw, 1.88rem);
+  letter-spacing: -0.05em;
+  line-height: 1.2em;
+  margin-bottom: 1.3rem;
+}
+body main .como-trabalhamos .container .texto .conteudo {
+  font-size: clamp(0.75rem, 0.614rem + 0.682vw, 1.13rem);
+  letter-spacing: -0.02em;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.3rem;
+}
+body main .como-trabalhamos .container .texto .destaque {
+  font-size: clamp(1.5rem, 1.227rem + 1.364vw, 2.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1.2em;
+  margin-bottom: 1.3rem;
+}
+body main .como-trabalhamos .container .texto .destaque .destaque-texto {
+  color: rgba(255, 255, 255, 0.5);
+}
+body main .como-trabalhamos .imagem {
+  flex: 0 0 44%;
+  overflow: hidden;
+}
+body main .como-trabalhamos .imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+body main .porque-nos {
+  width: 100%;
+  padding: 100px 50px;
+}
+body main .porque-nos .container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 3.13rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2.5rem;
+}
+body main .porque-nos .container .sobre {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  height: calc(100vh - 200px - 6.26rem);
+}
+body main .porque-nos .container .sobre .imagem {
+  flex: 0 0 44%;
+  overflow: hidden;
+}
+body main .porque-nos .container .sobre .imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+body main .porque-nos .container .sobre .texto {
+  flex: 1;
+}
+body main .porque-nos .container .sobre .texto .titulo {
+  font-size: clamp(1.5rem, 1.319rem + 0.741vw, 1.88rem);
+  letter-spacing: -0.05em;
+  line-height: 1.2em;
+  margin-bottom: 1.3rem;
+}
+body main .porque-nos .container .sobre .texto .conteudo {
+  font-size: clamp(0.75rem, 0.614rem + 0.682vw, 1.13rem);
+  letter-spacing: -0.02em;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.3rem;
+}
+body main .porque-nos .container .sobre .texto .destaque {
+  font-size: clamp(1.5rem, 1.227rem + 1.364vw, 2.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1.2em;
+  margin-bottom: 1.3rem;
+}
+body main .porque-nos .container .sobre .texto .destaque .destaque-texto {
+  color: rgba(255, 255, 255, 0.5);
+}
+body main .porque-nos .container .topicos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.6rem;
+}
+body main .porque-nos .container .topicos .titulo {
+  font-size: clamp(1.5rem, 1.319rem + 0.741vw, 1.88rem);
+  letter-spacing: -0.05em;
+  line-height: 1.2em;
+}
+body main .porque-nos .container .topicos .conteudo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.7rem;
+}
+body main .porque-nos .container .topicos .conteudo .item1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+body main .porque-nos .container .topicos .conteudo .item1 .container {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  padding: 0;
+  align-items: center;
+  gap: 1rem;
+}
+body main .porque-nos .container .topicos .conteudo .item1 .container .icone {
+  width: 30px;
+  height: 30px;
+  fill: rgb(255, 122, 59);
+}
+body main .porque-nos .container .topicos .conteudo .item1 .container .titulo {
+  font-size: 1.13rem;
+}
+body main .porque-nos .container .topicos .conteudo .item1 .descricao {
+  margin-left: 3rem;
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+body main .porque-nos .container .topicos .conteudo .item2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+body main .porque-nos .container .topicos .conteudo .item2 .container {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  padding: 0;
+  align-items: center;
+  gap: 1rem;
+}
+body main .porque-nos .container .topicos .conteudo .item2 .container .icone {
+  width: 30px;
+  height: 30px;
+  fill: rgb(255, 122, 59);
+}
+body main .porque-nos .container .topicos .conteudo .item2 .container .titulo {
+  font-size: 1.13rem;
+}
+body main .porque-nos .container .topicos .conteudo .item2 .descricao {
+  margin-left: 3rem;
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+body main .porque-nos .container .topicos .conteudo .item3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+body main .porque-nos .container .topicos .conteudo .item3 .container {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  padding: 0;
+  align-items: center;
+  gap: 1rem;
+}
+body main .porque-nos .container .topicos .conteudo .item3 .container .icone {
+  width: 30px;
+  height: 30px;
+  fill: rgb(255, 122, 59);
+}
+body main .porque-nos .container .topicos .conteudo .item3 .container .titulo {
+  font-size: 1.13rem;
+}
+body main .porque-nos .container .topicos .conteudo .item3 .descricao {
+  margin-left: 3rem;
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+body main .porque-nos .container .topicos .conteudo .item4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+body main .porque-nos .container .topicos .conteudo .item4 .container {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  padding: 0;
+  align-items: center;
+  gap: 1rem;
+}
+body main .porque-nos .container .topicos .conteudo .item4 .container .icone {
+  width: 30px;
+  height: 30px;
+  fill: rgb(255, 122, 59);
+}
+body main .porque-nos .container .topicos .conteudo .item4 .container .titulo {
+  font-size: 1.13rem;
+}
+body main .porque-nos .container .topicos .conteudo .item4 .descricao {
+  margin-left: 3rem;
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+body main .porque-nos .container .topicos .conteudo .item5 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+body main .porque-nos .container .topicos .conteudo .item5 .container {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  padding: 0;
+  align-items: center;
+  gap: 1rem;
+}
+body main .porque-nos .container .topicos .conteudo .item5 .container .icone {
+  width: 30px;
+  height: 30px;
+  fill: rgb(255, 122, 59);
+}
+body main .porque-nos .container .topicos .conteudo .item5 .container .titulo {
+  font-size: 1.13rem;
+}
+body main .porque-nos .container .topicos .conteudo .item5 .descricao {
+  margin-left: 3rem;
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+body main .porque-nos .container .topicos .conteudo .item6 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+body main .porque-nos .container .topicos .conteudo .item6 .container {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  padding: 0;
+  align-items: center;
+  gap: 1rem;
+}
+body main .porque-nos .container .topicos .conteudo .item6 .container .icone {
+  width: 30px;
+  height: 30px;
+  fill: rgb(255, 122, 59);
+}
+body main .porque-nos .container .topicos .conteudo .item6 .container .titulo {
+  font-size: 1.13rem;
+}
+body main .porque-nos .container .topicos .conteudo .item6 .descricao {
+  margin-left: 3rem;
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*# sourceMappingURL=sobre.css.map */

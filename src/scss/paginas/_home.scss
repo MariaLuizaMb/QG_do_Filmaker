@@ -181,7 +181,9 @@ body {
 
     .servicos {
       padding: 100px 50px;
+      height: fit-content;
       .container {
+        height: 100%;
         display: flex;
         flex-direction: row;
         position: relative;
@@ -201,6 +203,11 @@ body {
           width: 50%;
 
           h2 {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 100px;
+            margin-bottom: 80px;
+
             @include f.h2;
             font-weight: 700;
           }
@@ -337,6 +344,7 @@ body {
               position: -webkit-sticky;
               position: sticky;
               top: 100px;
+              margin-bottom: 80px;
 
               @include f.h2;
               font-weight: 600;
@@ -601,16 +609,6 @@ body {
           }
         }
       }
-    }
-
-    .slider-tags {
-      width: max-content;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 30px;
-
-      @include s.slider-tags;
     }
   }
 }

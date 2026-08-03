@@ -34,7 +34,12 @@ body {
         z-index: 1;
         width: 45%;
         gap: 4rem;
+
         .texto {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          position: relative;
         }
         .text-vertical {
           writing-mode: vertical-rl;
