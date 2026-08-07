@@ -1,0 +1,286 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as f;
+@use "../componentes/cards" as c;
+@use "../componentes/icons" as i;
+@use "../componentes/sliderElements" as s;
+@use "../base/mixins" as m;
+@use "../componentes/botao" as b;
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: $black-color;
+  color: $white-color;
+  overflow-x: hidden;
+
+  .servicos {
+    width: 100%;
+    height: 100%;
+    padding: 100px 50px;
+
+    .container-conteudo {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      gap: 3.2rem;
+      padding: 3.2rem;
+
+      background-image: url("/dist/Imagens/lines_background.webp");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      border: 1px solid $white-color-30;
+      border-radius: 2.5rem;
+
+      .texto {
+        top: 7rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        position: -webkit-sticky;
+        position: sticky;
+
+        .titulo {
+          @include m.h2;
+        }
+
+        .texto-conteudo {
+          @include m.paragraph-small;
+          color: $white-color-80;
+        }
+        .destaque {
+          @include m.paragraph-large;
+          color: $white-color;
+
+          .destaque-texto {
+            color: $white-color-50;
+          }
+        }
+      }
+
+      .topicos {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3.4rem;
+        margin-top: 1.3rem;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0.7rem;
+
+          .container {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+
+            .icone {
+              @include i.icone-topico-servico;
+            }
+
+            .topico {
+              @include m.h4;
+              font-weight: 630;
+            }
+          }
+
+          .conteudo {
+            margin-left: 2.9rem;
+            @include m.paragraph-xsmall;
+            color: $white-color-80;
+          }
+        }
+      }
+    }
+
+    &.servicos--producao {
+      .container-conteudo {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .detalhes-categorias {
+    width: 100%;
+    padding: 100px 50px;
+
+    .container {
+      border: 1px solid $white-color-30;
+      display: flex;
+      flex-flow: column;
+      padding: 3.2rem;
+      gap: 1.2rem;
+      border-radius: 2.5rem;
+
+      .cabecalho {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 2.5rem;
+        width: 65%;
+        gap: 0.65rem;
+
+        .titulo {
+          @include m.h2;
+        }
+        .descricao {
+          @include m.paragraph-small;
+          color: $white-color-80;
+        }
+      }
+
+      .categorias {
+        list-style: none;
+        display: flex;
+        flex-flow: column;
+
+        background-image: url("/dist/Imagens/lines_background.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        padding: 0;
+        margin: 0;
+
+        .item {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          padding: 1.3rem;
+          gap: 0.66rem;
+          align-items: center;
+          overflow: hidden;
+
+          cursor: pointer;
+
+          .conteudo {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 3.13rem 3.13rem 1.9rem 6.88rem;
+            gap: 0.82rem;
+
+            .numero {
+              font-size: 11.88rem;
+              font-weight: 650;
+              background-image: $white-gradient;
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+              opacity: 0.3;
+
+              position: absolute;
+              z-index: -2;
+              top: -85px;
+              left: -20px;
+            }
+
+            .imagem {
+              width: 23.75rem;
+              height: 13.13rem;
+              border-radius: 1.3rem;
+              overflow: hidden;
+
+              display: flex;
+              flex-direction: row;
+
+              max-height: 0;
+              opacity: 0;
+              transition:
+                max-height 0.45s cubic-bezier(0.65, 0, 0.35, 1),
+                opacity 0.3s ease;
+
+              .img-item {
+                position: relative;
+                display: block;
+                height: 100%;
+                overflow: hidden;
+
+                flex: 0 0 10%;
+                transition: flex 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+
+                &.ativo {
+                  flex: 0 0 70%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  display: block;
+                  border-radius: 1rem;
+                }
+
+                .icone-explorar {
+                  @include b.botao-explorar;
+                }
+                &:hover {
+                  .icone-explorar {
+                    opacity: 1; // continua aparecendo no hover da imagem inteira
+                  }
+                }
+              }
+            }
+
+            .texto {
+              width: 75%;
+              display: flex;
+              flex-direction: column;
+              gap: 0.7rem;
+
+              .titulo {
+                @include m.h2;
+              }
+
+              .descricao {
+                @include m.paragraph-small;
+                color: $white-color-80;
+
+                max-height: 0;
+                opacity: 0;
+                margin-top: 0;
+                overflow: hidden;
+                transition:
+                  max-height 0.45s ease,
+                  opacity 0.3s ease,
+                  margin-top 0.45s ease;
+              }
+            }
+          }
+
+          svg {
+            flex-shrink: 0;
+            rotate: (-90deg);
+            transition: transform 0.35s ease;
+          }
+
+          &.aberto {
+            .conteudo {
+              .imagem {
+                max-height: 13.13rem;
+                opacity: 1;
+              }
+              .texto .descricao {
+                max-height: 40rem;
+                opacity: 1;
+              }
+            }
+
+            svg {
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

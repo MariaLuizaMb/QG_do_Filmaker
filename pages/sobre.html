@@ -18,20 +18,15 @@
       <site-navbar></site-navbar>
     </header>
     <main>
-      <section class="hero">
-        <div class="text-hero">
-          <div class="texto">
-            <h1 class="titulo">Sobre nós</h1>
-            <p class="texto-apoio">
-              Descubra a equipe que adiciona uma dose de diversão à produção de
-              vídeos. Esta é a nossa equipe, a família StoryStream, onde a
-              paixão encontra os pixels com um sorriso!
-            </p>
-          </div>
-          <p class="text-vertical">scroll</p>
-        </div>
-        <img src="../dist/Imagens/Projetos/img_hero4.jpg" alt="" />
-      </section>
+      <hero-secao
+        titulo="Sobre nós"
+        imagem="../dist/Imagens/Projetos/img_hero4.jpg"
+        ><p slot="descricao">
+          Descubra a equipe que adiciona uma dose de diversão à produção de
+          vídeos. Esta é a nossa equipe, a família StoryStream, onde a paixão
+          encontra os pixels com um sorriso!
+        </p>
+      </hero-secao>
 
       <section class="sobre-produtora">
         <div class="container">

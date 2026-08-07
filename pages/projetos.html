@@ -19,20 +19,15 @@
       <site-navbar></site-navbar>
     </header>
     <main>
-      <section class="hero">
-        <div class="text-hero">
-          <div class="texto">
-            <h1 class="titulo">Nossos Projetos</h1>
-            <p class="texto-apoio">
-              Desde a concepção de ideias criativas até a execução de campanhas
-              excepcionais, somos uma equipe amigável e divertida, pronta para
-              transformar os seus sonhos em realidade!
-            </p>
-          </div>
-          <p class="text-vertical">scroll</p>
-        </div>
-        <img src="../dist/Imagens/Projetos/img_Hero.jpg" alt="" />
-      </section>
+      <hero-secao
+        titulo="Nossos Projetos"
+        imagem="../dist/Imagens/Projetos/img_Hero.jpg"
+        ><p slot="descricao">
+          Desde a concepção de ideias criativas até a execução de campanhas
+          excepcionais, somos uma equipe amigável e divertida, pronta para
+          transformar os seus sonhos em realidade!
+        </p>
+      </hero-secao>
 
       <section class="filtro-categorias">
         <div class="seletor-categorias">

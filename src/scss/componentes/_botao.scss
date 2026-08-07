@@ -364,3 +364,59 @@
     }
   }
 }
+
+@mixin botao-explorar {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $black-color-60;
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  border-radius: 1rem;
+
+  .circulo {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 1.5px solid $white-color;
+    background: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease;
+
+    svg {
+      fill: $orange-color;
+      transition: fill 0.25s ease;
+    }
+
+    &:hover {
+      background-color: $teal-color;
+      border-color: $teal-color;
+
+      svg {
+        fill: $white-color;
+      }
+    }
+  }
+
+  .legenda {
+    @include f.paragraph-medium;
+    font-weight: 650;
+    display: flex;
+    position: absolute;
+    inset: 0;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 36px;
+    pointer-events: none;
+  }
+}

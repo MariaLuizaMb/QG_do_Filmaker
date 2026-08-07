@@ -19,8 +19,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compilar": "sass ./src/scss/global.scss:./dist/css/global.css ./src/scss/home.scss:./dist/css/home.css ./src/scss/projetos.scss:./dist/css/projetos.css ./src/scss/sobre.scss:./dist/css/sobre.css",
-    "observar": "sass --watch ./src/scss/global.scss:./dist/css/global.css ./src/scss/home.scss:./dist/css/home.css ./src/scss/projetos.scss:./dist/css/projetos.css ./src/scss/sobre.scss:./dist/css/sobre.css"
+    "compilar": "sass ./src/scss/global.scss:./dist/css/global.css ./src/scss/home.scss:./dist/css/home.css ./src/scss/projetos.scss:./dist/css/projetos.css ./src/scss/sobre.scss:./dist/css/sobre.css ./src/scss/servicos.scss:./dist/css/servicos.css",
+    "observar": "sass --watch ./src/scss/global.scss:./dist/css/global.css ./src/scss/home.scss:./dist/css/home.css ./src/scss/projetos.scss:./dist/css/projetos.css ./src/scss/sobre.scss:./dist/css/sobre.css ./src/scss/servicos.scss:./dist/css/servicos.css"
   },
   "devDependencies": {
     "sass": "^1.97.3"
