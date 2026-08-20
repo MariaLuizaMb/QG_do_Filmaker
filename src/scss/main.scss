@@ -1,0 +1,10 @@
+@use "base/variables";
+@use "base/reset";
+
+// // Layout
+@use "layout/nav";
+@use "paginas/home";
+@use "paginas/projetos";
+@use "paginas/sobre";
+@use "paginas/servicos";
+@use "layout/footer";

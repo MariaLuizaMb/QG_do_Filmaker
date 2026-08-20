@@ -1,0 +1,33 @@
+@use "../base/font" as f;
+@use "../base/mixins" as m;
+@use "../base/variables" as *;
+
+@mixin tag-card {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.3rem 1.2rem;
+  @include m.glass-background;
+  border: 0.01rem solid rgba($white-color, 0.3);
+  border-radius: 2rem;
+  font-size: f.$label;
+  text-transform: uppercase;
+
+  // // &:hover {
+  // //   background: rgba(255 122 59 / 0.7);
+  // //   border: 0.01rem solid $orange-color;
+  // //   color: $white-color;
+  // //   box-shadow: 0 0 0.6rem rgba(255, 122, 59, 0.8);
+  // // }
+}
+
+@mixin tag-servico {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.3rem 1.1rem;
+  background: rgba(255 122 59 / 0.2);
+  border: 0.01rem solid $orange-color;
+  border-radius: 2rem;
+  font-size: f.$label;
+  color: $orange-color;
+  text-transform: uppercase;
+}

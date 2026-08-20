@@ -1,0 +1,306 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(13, 13, 13);
+  color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+body main {
+  width: 100%;
+}
+body main .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0 3rem;
+}
+body main .hero .text-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+  width: 45%;
+  gap: 4rem;
+}
+body main .hero .text-hero .texto {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+body main .hero .text-hero .text-vertical {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+}
+body main .hero img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body main .filtro-categorias {
+  display: flex;
+}
+body main .filtro-categorias .seletor-categorias {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 4rem 8rem;
+}
+body main .filtro-categorias .seletor-categorias .categoria {
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 2rem;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+}
+body main .projetos-portifolio {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 4rem;
+}
+body main .projetos-portifolio .coluna1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body main .projetos-portifolio .coluna2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body main .projetos-portifolio .coluna3 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body main .projetos-portifolio .card-projeto {
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  position: relative;
+  padding: 0.6rem 0.6rem 1.75rem 0.6rem;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.02rem solid rgba(255, 255, 255, 0.22);
+  border-radius: 1rem;
+}
+body main .projetos-portifolio .card-projeto .tag-card {
+  position: absolute;
+  z-index: 2;
+  margin: 0.8rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.3rem 1.2rem;
+  background: rgba(0, 0, 0, 0.288);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 0.01rem solid rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+body main .projetos-portifolio .card-projeto .video-projeto {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+body main .projetos-portifolio .card-projeto .container {
+  padding: 0 1.25rem;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .nome-cliente {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .topo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .topo .nome-projeto {
+  font-size: clamp(0.75rem, 0.614rem + 0.682vw, 1.13rem);
+  font-weight: 720;
+}
+body main .projetos-portifolio .card-projeto .container .texto-conteudo .topo .data-projeto {
+  font-size: 0.94rem;
+  font-weight: 400;
+}
+body main .projetos-portifolio .card-projeto .container .descricao {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  gap: 1rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.6s ease;
+}
+body main .projetos-portifolio .card-projeto .container .descricao .descricao-projeto {
+  font-size: 0.94rem;
+  line-height: 1.5em;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.8);
+}
+body main .projetos-portifolio .card-projeto .container .descricao .tags {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex-direction: row;
+}
+body main .projetos-portifolio .card-projeto .container .descricao .tags .tag-servico {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.3rem 1.1rem;
+  background: rgba(255, 122, 59, 0.2);
+  border: 0.01rem solid rgb(255, 122, 59);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  color: rgb(255, 122, 59);
+  text-transform: uppercase;
+}
+body main .projetos-portifolio .card-projeto.card-ativo .descricao {
+  opacity: 1;
+}
+body main .container-botao {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body main .container-botao .fundo {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 5px;
+  border-radius: 40px;
+}
+body main .container-botao .fundo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  pointer-events: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+body main .container-botao .fundo {
+  padding: 4px;
+  width: fit-content;
+}
+body main .container-botao .fundo button {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  border: none;
+  border-radius: 34px;
+  background: rgba(13, 13, 13, 0.6);
+  font-size: clamp(1rem, 0.909rem + 0.455vw, 1.25rem);
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding: 11px 33px 11px 0px;
+  gap: 4px;
+  overflow: hidden;
+  transition: padding 0.3s cubic-bezier(0.44, 0, 0.56, 1);
+}
+body main .container-botao .fundo button svg {
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+body main .container-botao .fundo button span {
+  width: fit-content;
+  z-index: 1;
+  white-space: nowrap;
+}
+body main .container-botao .fundo button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgb(255, 122, 59) 10%, rgb(237, 153, 29) 50%, rgb(9, 93, 93) 89%);
+  border-radius: 34px;
+  z-index: 0;
+  transform-origin: 50px 50%;
+  transform: scale(1);
+  transition: transform 0.4s ease-in-out;
+}
+body main .container-botao .fundo button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  z-index: 1;
+  box-shadow: inset 0 1px 0 rgba(13, 13, 13, 0.6), inset 1px 0 0 rgba(13, 13, 13, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+body main .container-botao .fundo button:hover {
+  padding-left: 27px;
+  background: rgba(13, 13, 13, 0.6);
+}
+body main .container-botao .fundo button:hover::before {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+body main .container-botao .fundo button:hover svg {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+body main .container-botao .fundo button:hover::after {
+  transform: scale(0);
+}
+body main .container-botao .fundo button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main .container-botao .fundo button span {
+  text-transform: uppercase;
+}
+body main .container-botao .fundo button svg {
+  width: 28px;
+  height: 28px;
+  animation: pulse 0.6s cubic-bezier(0.44, 0, 0.56, 1) infinite;
+}
+body main .container-botao .fundo button svg path {
+  fill: rgb(255, 0, 13);
+}
+
+/*# sourceMappingURL=projetos.css.map */

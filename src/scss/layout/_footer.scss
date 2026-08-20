@@ -1,0 +1,200 @@
+@use "../base/variables" as v;
+@use "../base/font" as f;
+@use "../base/mixins.scss" as m;
+@use "../componentes/botao" as b;
+
+footer {
+  background: v.$black-color;
+  padding: 100px 50px 50px 50px;
+  .container {
+    background-image: url("/dist/Imagens/lines_background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .conteudo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 10px;
+      width: 100%;
+      height: 100%;
+      border-radius: 40px;
+      background: v.$white-radial-gradient;
+
+      .QGlogo {
+        width: 405px;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .cta {
+        width: 100%;
+        background: v.$white-color-4;
+        border: 0.1px solid v.$white-color-30;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 51px;
+        padding: 47px 58px;
+
+        .texto {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 24px;
+          width: fit-content;
+
+          h2 {
+            text-align: center;
+            @include m.display-text;
+          }
+
+          p {
+            @include m.h3;
+            font-weight: 600;
+            opacity: 0.8;
+          }
+        }
+
+        .botao {
+          max-width: 651px;
+          text-decoration: none;
+          @include b.botao-footer;
+        }
+      }
+
+      .infos-links {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+
+        .infos {
+          width: 100%;
+          border: 0.1px solid v.$white-color-30;
+          background: v.$white-color-4;
+          border-radius: 40px;
+          padding: 38px 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 30px;
+
+          .info-topo {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 15px;
+
+            p {
+              b {
+                @include m.fonte-secundaria-inter;
+              }
+              font-weight: 400;
+              @include m.fonte-secundaria-inter;
+              @include m.paragraph-small;
+            }
+          }
+        }
+
+        .info-inferior {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          gap: 10px;
+          p {
+            @include m.fonte-secundaria-inter;
+            @include m.paragraph-small;
+            font-weight: 500;
+          }
+
+          .contato-whatsapp {
+            text-decoration: none;
+            @include b.botao-whatsapp;
+          }
+        }
+
+        .links {
+          width: 100%;
+          display: grid;
+          grid-template-columns: auto auto;
+          border: 0.1px solid v.$white-color-30;
+          background: v.$white-color-4;
+          border-radius: 40px;
+          padding: 38px 50px;
+
+          .esquerda {
+            .navegacao {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              p {
+                @include m.h4;
+              }
+              a {
+                width: fit-content;
+                @include m.fonte-secundaria-inter;
+                @include m.footer-link;
+                text-transform: uppercase;
+              }
+            }
+          }
+
+          .direita {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .juridico {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              p {
+                @include m.h4;
+              }
+
+              a {
+                @include m.fonte-secundaria-inter;
+                @include m.footer-link;
+                text-transform: uppercase;
+              }
+            }
+
+            .social {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              p {
+                @include m.h4;
+              }
+
+              a {
+                @include m.fonte-secundaria-inter;
+                @include m.footer-link;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+
+      .redes-sociais {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 50%);
+        gap: 10px;
+        .redirect {
+          text-decoration: none;
+          @include b.botao-social;
+        }
+      }
+    }
+  }
+}

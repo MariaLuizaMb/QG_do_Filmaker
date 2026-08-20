@@ -1,0 +1,31 @@
+{
+  "name": "qg_do_filmaker",
+  "version": "1.0.0",
+  "description": "portifolio de audiovisual",
+  "keywords": [
+    "qgfilmaker"
+  ],
+  "homepage": "https://github.com/MariaLuizaMb/QG_do_Filmaker#readme",
+  "bugs": {
+    "url": "https://github.com/MariaLuizaMb/QG_do_Filmaker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaLuizaMb/QG_do_Filmaker.git"
+  },
+  "license": "ISC",
+  "author": "maria luiza",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compilar": "sass ./src/scss/global.scss:./dist/css/global.css ./src/scss/home.scss:./dist/css/home.css ./src/scss/projetos.scss:./dist/css/projetos.css ./src/scss/sobre.scss:./dist/css/sobre.css ./src/scss/servicos.scss:./dist/css/servicos.css",
+    "observar": "sass --watch ./src/scss/global.scss:./dist/css/global.css ./src/scss/home.scss:./dist/css/home.css ./src/scss/projetos.scss:./dist/css/projetos.css ./src/scss/sobre.scss:./dist/css/sobre.css ./src/scss/servicos.scss:./dist/css/servicos.css"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}

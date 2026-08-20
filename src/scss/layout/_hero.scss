@@ -1,0 +1,99 @@
+@use "../base/variables" as v;
+@use "../base/font" as f;
+@use "../base/mixins.scss" as m;
+
+hero-secao {
+  display: block;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  padding: 0 3rem;
+
+  .text-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+    width: 45%;
+    gap: 4rem;
+
+    .texto {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      position: relative;
+      gap: 0.6rem;
+
+      .titulo {
+        @include m.h1;
+      }
+
+      .texto-apoio {
+        @include m.paragraph-medium;
+      }
+    }
+
+    // Agrupa o texto "scroll" com o risco animado logo abaixo
+    .scroll-indicador {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .text-vertical {
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+    }
+
+    .risco-container {
+      width: 1px;
+      height: 6rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .risco {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: v.$white-color;
+      animation: risco-scroll 1.8s ease-in-out infinite;
+    }
+  }
+
+  // A tag <img> gerada pelo componente recebe will-change para o
+  // navegador otimizar a animação de parallax feita via GSAP
+  img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 110%; // um pouco mais alta que o container: dá "folga" para o parallax mover sem revelar borda vazia
+    object-fit: cover;
+    will-change: transform;
+  }
+}
+
+@keyframes risco-scroll {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}

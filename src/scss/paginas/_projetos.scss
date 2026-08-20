@@ -1,0 +1,133 @@
+@use "../base/variables" as *;
+@use "../base/mixins.scss" as m;
+@use "../base/font.scss" as f;
+@use "../componentes/botao" as b;
+@use "../componentes/cards" as c;
+@use "../componentes/icons" as i;
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: $black-color;
+  color: $white-color;
+  overflow-x: hidden;
+
+  main {
+    width: 100%;
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+
+      padding: 0 3rem;
+
+      .text-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: relative;
+        z-index: 1;
+        width: 45%;
+        gap: 4rem;
+
+        .texto {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          position: relative;
+        }
+        .text-vertical {
+          writing-mode: vertical-rl;
+          text-transform: uppercase;
+        }
+      }
+
+      img {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .filtro-categorias {
+      display: flex;
+      .seletor-categorias {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 4rem 8rem;
+        .categoria {
+          padding: 0.6rem 1.2rem;
+          background: rgba($white-color, 0.05);
+          border: 1px solid rgba($white-color, 0.22);
+          border-radius: 2rem;
+          color: $white-color;
+          font-size: 1rem;
+        }
+      }
+    }
+    .projetos-portifolio {
+      position: relative;
+      width: 100%;
+      display: flex;
+
+      gap: 1rem;
+      padding: 4rem;
+
+      .coluna1 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .coluna2 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .coluna3 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .card-projeto {
+        @include c.card-projeto;
+      }
+    }
+    .container-botao {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .fundo {
+        @include b.fundo;
+        padding: 4px;
+        width: fit-content;
+
+        button {
+          @include b.botao-gravacao;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            text-transform: uppercase;
+          }
+          svg {
+            @include i.gravando-icon;
+          }
+        }
+      }
+    }
+  }
+}

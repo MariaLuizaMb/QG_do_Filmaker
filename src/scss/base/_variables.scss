@@ -1,0 +1,64 @@
+$orange-color: rgb(255, 122, 59);
+$yellow-color: rgb(237, 153, 29);
+$teal-color: rgb(9, 93, 93);
+$black-color: rgb(13, 13, 13);
+$black-color-60: rgba(13, 13, 13, 0.6);
+$white-color: rgb(255, 255, 255);
+$white-color-4: rgba(255, 255, 255, 0.04);
+$white-color-30: rgba(255, 255, 255, 0.3);
+$white-color-50: rgba(255, 255, 255, 0.5);
+$white-color-80: rgba(255, 255, 255, 0.8);
+$red-color: rgb(255, 0, 13);
+$gradient-opacity: 0.31;
+
+$white-radial-gradient: radial-gradient(
+  56% 65% at 0% 0%,
+  $orange-color 0%,
+  rgba($white-color, 0.05) 90%,
+  rgba($white-color, 0.03) 100%
+);
+
+$white-gradient: linear-gradient(
+  to top right,
+  rgba($white-color, 1) 0%,
+  rgba($white-color, 0.5) 50%,
+  rgba($white-color, 0) 100%
+);
+$black-gradient: linear-gradient(
+  to bottom,
+  rgba($black-color, 0.8) 0%,
+  rgba($black-color, 0.01) 100%
+);
+
+$radial-white: radial-gradient(
+  circle,
+  rgba($white-color, 1) 0%,
+  rgba($white-color, 0.4) 60%,
+  rgba($white-color, 0.1) 100%
+);
+
+$radial-black: linear-gradient(
+  to bottom,
+  rgba($black-color, 1) 0%,
+  rgba($black-color, 0.9) 70%,
+  rgba($black-color, 0.7) 200%
+);
+
+$gradient-button: linear-gradient(
+  100deg,
+  $orange-color 10%,
+  $yellow-color 50%,
+  $teal-color 89%
+);
+
+$faq-gradient: radial-gradient(
+  20% 60% at 0% 0%,
+  rgba($white-color, 0.2) 0%,
+  rgba($white-color, 0) 100%
+);
+
+$faq-gradient-hover: radial-gradient(
+  30% 60% at 50% 0%,
+  rgba($white-color, 0.2) 0%,
+  rgba($white-color, 0) 100%
+);
